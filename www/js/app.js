@@ -7,11 +7,15 @@
 angular.module('starter', [
   'ionic',
   'ngResource',
+  'angularMoment',
+  'ngMessages',
   'starter.controllers',
   'starter.services'
 ])
 
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, amMoment) {
+    amMoment.changeLocale('zh-cn');
+
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -43,6 +47,26 @@ angular.module('starter', [
           'menuContent': {
             templateUrl: 'templates/community.html',
             controller: 'CommunityCtrl'
+          }
+        }
+      })
+
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/community/login.html',
+            controller: 'LoginCtrl'
+          }
+        }
+      })
+
+      .state('app.register', {
+        url: '/register',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/community/signin.html',
+            controller: 'SigninCtrl'
           }
         }
       });
