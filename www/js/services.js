@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
   .factory('Discussions', function ($resource) {
-    var resource = $resource('http://forum.growth.ren/' + 'api/discussions/:id', {id: '@id'}, {
+    var resource = $resource('http://discuss.flarum.org.cn/' + 'api/discussions/:id', {id: '@id'}, {
       update: {method: 'PUT'},
       all: {method: 'GET'}
     });
@@ -8,7 +8,7 @@ angular.module('starter.services', [])
     return resource;
   })
   .factory('Users', function ($resource) {
-    var resource = $resource('http://forum.growth.ren/' + 'api/users/:id', {
+    var resource = $resource('http://discuss.flarum.org.cn/' + 'api/users/:id', {
       id: '@id'
     }, {
       update: {method: 'PUT'}

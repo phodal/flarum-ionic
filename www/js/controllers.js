@@ -25,7 +25,7 @@ angular.module('starter.controllers', ['starter.services'])
     };
   })
 
-  .controller('LoginCtrl', function ($scope, $http, $rootScope, $ionicHistory) {
+  .controller('LoginCtrl', function ($scope, $http, $rootScope, $ionicHistory, $window) {
     $scope.user = {};
     $scope.isLogin = $rootScope.userId;
 
@@ -35,10 +35,11 @@ angular.module('starter.controllers', ['starter.services'])
         password: user.password
       };
 
-      $http.post('http://forum.growth.ren/' + 'api/token', payload)
+      $http.post('http://discuss.flarum.org.cn/' + 'api/token', payload)
         .success(function (data) {
           $scope.isLogin = true;
           $rootScope.userId = data.userId;
+          $window.localStorage.setItem('token', data.token);
           $ionicHistory.goBack(-1);
         })
         .error(function (data, status) {
@@ -62,7 +63,7 @@ angular.module('starter.controllers', ['starter.services'])
         password: $scope.user.password
       };
 
-      $http.post('http://forum.growth.ren/register', payload)
+      $http.post('http://discuss.flarum.org.cn/register', payload)
         .success(function (data) {
           var alertPopup = $ionicPopup.alert({
             title: '注册成功',
@@ -127,7 +128,6 @@ angular.module('starter.controllers', ['starter.services'])
     };
 
     $scope.isLiked = function (relationships) {
-      console.log(relationships);
       var isLike = false;
       var userId = relationships.user.data.id;
       angular.forEach(relationships.likes.data, function(like){
@@ -169,7 +169,7 @@ angular.module('starter.controllers', ['starter.services'])
 
       $http({
         method: 'POST',
-        url: 'http://forum.growth.ren/api/posts',
+        url: 'http://discuss.flarum.org.cn/api/posts',
         data: reply,
         headers: {
           'Authorization': 'Token ' + $window.localStorage.getItem('token')
@@ -198,7 +198,7 @@ angular.module('starter.controllers', ['starter.services'])
 
       $http({
         method: 'POST',
-        url: 'http://forum.growth.ren/api/posts/' + ID,
+        url: 'http://discuss.flarum.org.cn/api/posts/' + ID,
         data: like,
         headers: {
           'X-Fake-Http-Method': 'PATCH',
@@ -242,7 +242,7 @@ angular.module('starter.controllers', ['starter.services'])
       };
       $http({
         method: 'POST',
-        url: 'http://forum.growth.ren/api/discussions',
+        url: 'http://discuss.flarum.org.cn/api/discussions',
         data: data,
         headers: {
           'Authorization': 'Token ' + $window.localStorage.getItem('token')
