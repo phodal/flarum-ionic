@@ -51,6 +51,31 @@ angular.module('starter', [
         }
       })
 
+      .state('app.topic-create', {
+        url: '/topic/create',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/community/create.html',
+            controller: 'CreateCtrl'
+          }
+        }
+      })
+
+      .state('app.topic', {
+        url: '/topic/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/community/topic.html',
+            controller: 'TopicCtrl',
+            resolve: {
+              discussion: function (Discussions, $stateParams) {
+                return Discussions.get({id: $stateParams.id});
+              }
+            }
+          }
+        }
+      })
+
       .state('app.login', {
         url: '/login',
         views: {

@@ -1,1 +1,244 @@
-/* Empty. Add your own CSS if you like */
+.topics .item-content {
+  padding: 14px 16px 18px 72px
+}
+
+.topics .item-content>img:not(:first-child) {
+  -webkit-transform: translate3d(-2000px,-2000px,0);
+  position: absolute
+}
+
+.topics .activated .tab:not(.hl) {
+  background-color: #aeaeae;
+  color: #fff
+}
+
+.topics .ago,.topics .summary {
+  font-size: 12px
+}
+
+.topics .tab {
+  background-color: #E5E5E5;
+  color: #999;
+  border-radius: 2px;
+  padding: 2px 4px
+}
+
+.topics .hl {
+  background-color: #4B4C49;
+  color: #fff
+}
+
+.topic-content img {
+  max-width: 100%
+}
+
+.topicCard {
+  background: #fff;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.topicItem {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.topic .title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.topic .summary {
+  margin: 16px 0
+}
+
+.topic .avatar {
+  width: 32px;
+  border-radius: 32px;
+  vertical-align: middle
+}
+
+.topic h1 {
+  font-size: 1.4em;
+}
+
+.topic h2 {
+  font-size: 1.3em;
+}
+
+.topic h3 {
+  font-size: 1.2em;
+}
+
+.topic h4 {
+  font-size: 1.1em;
+}
+
+.topic h1,
+.topic h2,
+.topic h3,
+.topic h4 {
+  text-align: center;
+}
+
+.replies .item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  white-space: normal
+}
+
+.replies .reply-content img {
+  max-width: 100%
+}
+
+.replies .reply-content p {
+  overflow: visible!important;
+  white-space: normal!important
+}
+
+.topic-create .topic-tabs {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 0
+}
+
+.reply-new input {
+  background: 0 0
+}
+
+.user .item-content {
+  padding-right: 16px
+}
+
+.PostMention {
+  margin: 0 3px
+}
+
+.PostMention:first-child {
+  margin-left: 0
+}
+
+.PostMention:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f4c7";
+  margin-right: 5px
+}
+
+hr.topic {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.tabs-growth > .tabs,
+.tabs.tabs-growth {
+  border-color: #5e6772;
+  background-color: #5e6772;
+  background-image: linear-gradient(0deg, #5e6772, #5e6772 50%, transparent 50%);
+  color: #fff;
+}
+
+.tabs-growth > .tabs .tab-item .badge,
+.tabs.tabs-growth .tab-item .badge {
+  background-color: #000;
+  color: #5e6772;
+}
+
+.bar.bar-positive {
+  border-color: #5e6772;
+  background-color: #5e6772;
+  background-image: linear-gradient(0deg, #5e6772, #5e6772 50%, transparent 50%);
+  color: #fff;
+}
+
+.bar.bar-positive .title {
+  color: #fff;
+}
+
+.bar.bar-positive.bar-footer {
+  background-image: linear-gradient(180deg, #5e6772, #5e6772 50%, transparent 50%);
+}
+
+.spinner-android {
+  stroke: #5e6772;
+}
+.bar-positive .button {
+  background-color: #5e6772;
+}
+
+.item.solutionItem {
+  margin: 0;
+}
+
+label.item.has-error {
+  border-bottom: 2px solid red;
+}
+
+label.item.has-error-lr {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+.form-errors {
+  margin: 5px 0
+}
+
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+#profile-content {
+  position: relative;
+  margin-top: 150px;
+  background-color: white;
+  box-shadow: 0px -1px 10px rgba(0,0,0,0.4);
+  padding-top: 200px;
+}
+
+#profile-info {
+  position: absolute;
+  top: -95px;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+#profile-name {
+  color: #444;
+  font-size: 26px;
+}
+#profile-description {
+  font-size: 15px;
+  color: #888;
+}
+#profile-description a {
+  color: #888;
+}
+
+#profile-image {
+  display: block;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  width: 128px;
+  height: 128px;
+  margin: 30px auto 0;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+}
+
+.button-clear.button-clear.isLike {
+  color: #3982DA;
+}
