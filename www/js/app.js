@@ -76,6 +76,16 @@ angular.module('starter', [
         }
       })
 
+      .state('app.user', {
+        url: '/user/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/community/profile.html',
+            controller: 'ProfileCtrl'
+          }
+        }
+      })
+
       .state('app.login', {
         url: '/login',
         views: {
