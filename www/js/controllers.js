@@ -127,19 +127,6 @@ angular.module('starter.controllers', ['starter.services'])
       }
     };
 
-    $scope.isLiked = function (relationships) {
-      var isLike = false;
-      var userId = relationships.user.data.id;
-      angular.forEach(relationships.likes.data, function(like){
-        console.log(like);
-        if( userId === like.id) {
-          isLike = true;
-        }
-      });
-      return isLike;
-
-    };
-
     $scope.encodeHTML = function (html) {
       return html.replace('href=', 'src=');
     };
@@ -184,35 +171,8 @@ angular.module('starter.controllers', ['starter.services'])
         }
       })
     };
-
-    $scope.LikeIt = function (ID) {
-      var like = {
-        "data": {
-          "type": "posts",
-          "id": ID.toString(),
-          "attributes": {
-            "isLiked": true
-          }
-        }
-      };
-
-      $http({
-        method: 'POST',
-        url: 'http://discuss.flarum.org.cn/api/posts/' + ID,
-        data: like,
-        headers: {
-          'X-Fake-Http-Method': 'PATCH',
-          'Authorization': 'Token ' + $window.localStorage.getItem('token')
-        }
-      }).success(function (response) {
-
-      }).error(function (data, status) {
-        if (status === 401) {
-          $scope.modal.show();
-        }
-      })
-    };
   })
+  
   .controller('ProfileCtrl', function ($scope, Users, $stateParams) {
     Users.get({id: $stateParams.id}).$promise.then(function (response) {
       $scope.userId = response.data.id;
